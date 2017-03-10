@@ -1,0 +1,35 @@
+.body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color:lightgrey;
+}
+.container{
+background:red;
+  text-align:center;
+}
+.form-addModel {
+  margin-top:10px;
+  padding: 15px;
+  
+}
+.form-addModel .form-signin-heading,
+.form-addModel {
+  margin-bottom: 10px;
+}
+.form-addModel-heading{
+    margin-left: 15%;
+    color:cadetblue;
+}
+
+.form-addModel  {
+  font-weight: normal;
+}
+.form-addModel .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
