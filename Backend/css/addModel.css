@@ -1,0 +1,81 @@
+.body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color:lightgrey;
+}
+.container{
+  background-color:#F5F5F5;
+  margin-top:5%;
+  box-shadow: 0 0 6px 0 ;
+}
+.form-addModel {
+  max-width: 760px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-addModel .form-signin-heading,
+.form-addModel {
+  margin-bottom: 10px;
+}
+.form-addModel-heading{
+    margin-left: 35%;
+    color:cadetblue;
+}
+
+.form-addModel  {
+  font-weight: normal;
+}
+.form-addModel .form-control  {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.previousPage{
+  position:fixed;
+  left:20px;
+  top:20px;
+}
+.form-addModel .inputs {
+  margin-bottom: 20px;
+}
+.psevdoFile {
+    overflow:hidden;
+    position: relative;
+    display: inline-block;
+    
+}
+.psevdoPicture {
+    overflow:hidden;
+    position: relative;
+    display: inline-block;
+    
+}
+
+.fileInput {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size:199px;
+    opacity:0;
+    filter:alpha(opacity:0);
+}
+
+.inputFileText {
+    border: 1px solid #dadada;
+    height: 26px;
+    line-height: 26px;
+    float: left;
+    width: 182px;
+    padding: 0 3px;
+    margin: 0 54px 0 0;
+}
+.add{
+text-align:center;
+margin-left:33%;
+margin-top:5%;
+width:30%;
+}

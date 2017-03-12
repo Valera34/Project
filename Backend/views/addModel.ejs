@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>AddModel</title>
+
+   
+    <link href="addModel.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+
+  <body>
+   <div class="previousPage">
+   <button type="button" class="btn btn-primary btn-lg" aria-label="Left Align"  onclick="location.href='/';">
+   <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+   </button>
+   </div>
+    <div class="container">
+
+      <form class="form-addModel">
+        <h2 class="form-addModel-heading">Add 3D Model</h2>
+       <label for="text" class="sr-only">Name</label>
+       <input type="text" id="name" class="form-control inputs" placeholder="Name of your 3D Model" required autofocus>
+      <span class="psevdoFile">
+    <label for="uploadbtn" class="uploadButton">Download Picture</label>
+    <input id="psevdoPictureValue" class="inputFileText form-control" type="text"/>
+    <input class="fileInput" type="file" size="1" required onchange="document.getElementById('psevdoPictureValue').value = this.value" name="addImg" multiple accept="image/png,image/jpeg"/>
+</span>
+       <span class="psevdoFile">
+    <label for="uploadbtn" class="uploadButton">Download File</label>
+    <input id="psevdoFileValue" class="inputFileText form-control" type="text"/>
+    <input class="fileInput" type="file" size="1" required onchange="document.getElementById('psevdoFileValue').value = this.value" name="addImg"/>
+</span>
+       <textarea class="form-control" rows="5" id="comment" placeholder="Here you can describe the model"></textarea>
+        <button class="btn btn-lg btn-primary add" type="submit">Add</button>
+      </form>
+    </div>
+  </body>
+</html>
