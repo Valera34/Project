@@ -9,7 +9,13 @@
     <link href="signin.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  </head>
+      
+       <!-- jQuery JavaScript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+ 
+    <script type="text/javascript"  src="/API.js"> </script>
+    
+    </head>
 
   <body>
 
@@ -22,7 +28,7 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="signIn()">Sign In</button>
       </form>
 
     </div>

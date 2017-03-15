@@ -9,6 +9,13 @@
     <link href="signup.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      
+      <!-- jQuery JavaScript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+      
+    <script type="text/javascript"  src="/API.js"> </script>
+      
+      
   </head>
 
   <body>
@@ -25,12 +32,15 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
           <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required>
+          <input type="password" id="confinputPassword" class="form-control" placeholder="Confirm Password" required>
         
-        <button class="btn btn-lg btn-info btn-block button" type="submit">Sign Up</button>
+        <button id="tosignup" class="btn btn-lg btn-info btn-block button" type="submit" onclick="signUp()">Sign Up</button>
       </form>
 
     </div>
 
   </body>
+    
+    
+    
 </html>
