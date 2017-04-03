@@ -1,6 +1,4 @@
-var API_URL = "http://localhost:5050";
-
-var isSigned;
+var API_URL = "http://make-me-be-3d-master.appspot.com/";
 
 
 function backendGet(url, callback) {
@@ -31,72 +29,4 @@ function backendPost(url, data, callback) {
     })
 }
 
-
-createPerson = function(person, callback) {
-   
-    backendPost("/api/signup/", person, callback);
-};
-
-signPerson = function(person, callback) {
-   
-    backendPost("/api/signin/", person, callback);
-};
-
-
-function sendData() {
-    
-        var person = {
-        name: $('#inputName').val(),
-        email: $('#inputEmail').val(),
-        pass: $('#inputPassword').val(),
-        confpass: $('#confinputPassword').val()
-    }
-           
-    createPerson(person, callback);
-        
-    function callback(err,res){
-        if(err){
-            console.log(err);
-        }
-       
-        return res;
-    }
-           
-   
-}
-
-
-function signUp(){
-      
-    sendData();
-           
-}
-
-function signIn(){
-    
-    signinToSite();
-    
-}
-
-
-
-function signinToSite(){
-    
-      var person = {
-        email: $('#inputEmail').val(),
-        pass: $('#inputPassword').val()
-    }
-    
-    signPerson(person, callback);
-        
-    function callback(err,res){
-        if(err){
-            console.log(err);
-        }
-        
-        return res;
-    }
-    
-    
-}
 

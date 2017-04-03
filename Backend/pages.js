@@ -7,19 +7,9 @@ exports.mainPage = function(req, res) {
     });
 };
 
-exports.signUpPage = function(req, res) {
-    res.render('signup', {
-        pageTitle: 'Sign Up'
-    });
-};
-
-exports.signInPage = function(req, res) {
-    res.render('signin', {
-        pageTitle: 'Sign In'
-    });
-};
 exports.addModelPage = function(req, res) {
     res.render('addModel', {
         pageTitle: 'New Model'
     });
 };
+

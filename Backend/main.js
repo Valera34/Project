@@ -1,63 +1,88 @@
-var express = require('express');
+
 var path = require('path');
 var morgan = require('morgan');
+var express = require('express');
+var app = express();
+var port = process.env.PORT || 3001;
+var mongoose = require('mongoose');
+var passport = require('passport');
+var flash = require('connect-flash');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var storage = require('node-persist');
-
-exports.storage=storage;
-
-storage.init({
-    dir: 'Backend/Database',
-
-    stringify: JSON.stringify,
-
-    parse: JSON.parse,
-
-    encoding: 'utf8',
-
-    logging: false,  // can also be custom logging function
-
-    continuous: true, // continously persist to disk
-
-    interval: false, // milliseconds, persist to disk on an interval
-
-    ttl: false, // ttl* [NEW], can be true for 24h default or a number in MILLISECONDS
-
-    expiredInterval: 2 * 60 * 1000, // [NEW] every 2 minutes the process will clean-up the expired cache
-
-    // in some cases, you (or some other service) might add non-valid storage files to your
-    // storage dir, i.e. Google Drive, make this true if you'd like to ignore these files and not throw an error
-    forgiveParseErrors: false // [NEW]
-
-});
-
-
-
+var session = require('express-session');
 
 function configureEndpoints(app) {
     var pages = require('./pages');
-    var api = require('./api');
+    var api = require('./api'); 
     
- 
-    //Сторінки
-    //Головна сторінка
-    app.get('/', pages.mainPage);
+     app.get('/', function(req, res) {
+        res.render('index.ejs'); // load the index.ejs file
+    });
     
+    app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
     
-    //запит на створення нового користувача
-    app.post('/api/signup/', api.signUp);
+    module.exports = function(app, passport) {
     
-    //запит на аутентифікацію
-    app.post('/api/signin/', api.signIn);
+        
+         // route for home page
+    app.get('/', function(req, res) {
+        res.render('index.ejs'); // load the index.ejs file
+    });
+                
+    // route for login form
+    // route for processing the login form
+    // route for signup form
+    // route for processing the signup form
+
+    // route for showing the profile page
+    app.get('/profile', isLoggedIn, function(req, res) {
+        res.render('profile.ejs', {
+            user : req.user // get the user out of session and pass to template
+        });
+    });
+
     
-    //Сторінка реєстрації
-    app.get('/signup.html', pages.signUpPage);
+     app.get('/addModel.html',isLoggedIn, pages.addModelPage);
+        
     
-    //Сторінка валідації
-    app.get('/signin.html', pages.signInPage);
+    // route for logging out
+    app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+
+   
+
+    // =====================================
+    // GOOGLE ROUTES =======================
+    // =====================================
+    // send to google to do the authentication
+    // profile gets us their basic information including their name
+    // email gets their emails
+    app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+
+    // the callback after google has authenticated the user
+    app.get('/auth/google/callback',
+            passport.authenticate('google', {
+                    successRedirect : '/profile',
+                    failureRedirect : '/'
+            }));
+
+    };
+
+// route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}
     
-     //Сторінка створення нової моделі
-    app.get('/addModel.html', pages.addModelPage);
+   
 
     //Якщо не підійшов жоден url
     app.use(express.static(path.join(__dirname, '../Frontend/MainPage/index')));
@@ -87,7 +112,7 @@ function startServer(port) {
 
     //Запуск додатка за вказаним портом
     app.listen(port, function () {
-        console.log('Project running on http://localhost:'+port+'/');
+        console.log('Project running on http://localhost:'+ process.env.PORT||port+'/');
     });
 }
 
