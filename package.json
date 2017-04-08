@@ -1,13 +1,14 @@
 {
   "name": "MakeMe3DMaster",
   "main": "server.js",
-  "dependencies" : {
-    "express" : "~3.4.4", 			
-    "ejs" : "~0.8.5", 				
-    "mongoose" : "~4.9.1", 			
-    "passport" : "~0.1.17", 			
-    "passport-facebook" : "~1.0.2", 
-    "connect-flash" : "~0.1.1", 	
-    "bcrypt-nodejs" : "latest" 		
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "connect-flash": "~0.1.1",
+    "connect-mongo": "^1.3.2",
+    "ejs": "~0.8.5",
+    "express": "~3.4.4",
+    "mongoose": "~4.9.1",
+    "passport": "~0.1.17",
+    "passport-facebook": "~1.0.2"
   }
 }

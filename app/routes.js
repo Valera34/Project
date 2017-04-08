@@ -29,6 +29,7 @@ module.exports = function(app, passport) {
     
     app.get('/profile/addModel',
 		passport.authenticate('facebook', {
+            session:true,
 			successRedirect : '/addModel',
 			failureRedirect : '/'
 		}));
@@ -43,6 +44,7 @@ module.exports = function(app, passport) {
 	// handle the callback after facebook has authenticated the user
 	app.get('/auth/facebook/callback',
 		passport.authenticate('facebook', {
+            session:true,
 			successRedirect : '/profile',
 			failureRedirect : '/'
 		}));

@@ -10,6 +10,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
 
+const MongoStore = require('connect-mongo')(express);
 
 var configDB = require('./config/database.js');
 
@@ -31,8 +32,9 @@ app.configure(function() {
 	app.use(express.session({ 
         secret: 'loveprogramming',
         cookie:{
-            maxAge : 3600*1000*12 // one hour in millis
-        }
+            maxAge : 360000 // one hour in millis
+        },
+        store: new MongoStore({ mongooseConnection: mongoose.connection })
                             })); // session secret
 	app.use(passport.initialize());
 	app.use(passport.session()); // persistent login sessions
