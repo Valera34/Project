@@ -15,6 +15,8 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     
+<script type="text/javascript"  src="../front_js/API.js"> </script>
    
  </head>
     
@@ -48,12 +50,16 @@
      
           <div class="mainRightBlock">
   <div class="row row-flex">
-  <div class="col-sm-6 col-md-3">
+      
+    <div id="models_field">
+      
+          <div class='TEMP'>
+           <div    class="col-sm-6 col-md-3">
     <div class="thumbnail">
-      <img src="..." alt="Image of 3DModel">
       <div class="caption">
-        <h3>Name of 3Dmodel</h3>
+        <h3 class="model-name"></h3>
         <p>Comments:</p>
+          <div class="model-descr"></div>
         <p><button type="button" class="btn btn-primary fingerUp">
   <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
 </button>
@@ -62,8 +68,15 @@
 </button>
 </p>
       </div>
+        
+        
     </div>
   </div>
+          </div>
+          
+          
+    
+      </div>
       
       <div class="col-sm-6 col-md-3">
     <div class="thumbnail">

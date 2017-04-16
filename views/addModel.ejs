@@ -5,35 +5,36 @@
     
     <title>AddModel</title>
 
-   
-    <link href="addModel.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="./addModel.css">
+    
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      
+      
+      
+      <!--Own JavaScript -->
+      <script type="text/javascript"  src="../front_js/API.js"> </script>
+      
   </head>
 
   <body>
-   <div class="previousPage">
-   <button type="button" class="btn btn-primary btn-lg" aria-label="Left Align"  onclick="location.href='/';">
-   <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-   </button>
-   </div>
+   
     <div class="container">
 
-      <form class="form-addModel">
+      <form class="form-addModel" ref='uploadForm' 
+      id='uploadForm' 
+      action='http://localhost:8080/profile/addModel/createModel' 
+      method='post' 
+      encType="multipart/form-data">
         <h2 class="form-addModel-heading">Add 3D Model</h2>
-       <label for="text" class="sr-only">Name</label>
-       <input type="text" id="name" class="form-control inputs" placeholder="Name of your 3D Model" required autofocus>
-      <span class="psevdoFile">
-    <label for="uploadbtn" class="uploadButton">Download Picture</label>
-    <input id="psevdoPictureValue" class="inputFileText form-control" type="text"/>
-    <input class="fileInput" type="file" size="1" required onchange="document.getElementById('psevdoPictureValue').value = this.value" name="addImg" multiple accept="image/png,image/jpeg"/>
-</span>
+       <label for="text" class="sr-only" >Name</label>
+       <input type="text" id="name" class="form-control inputs" name="name" placeholder="Name of your 3D Model" required autofocus>
        <span class="psevdoFile">
     <label for="uploadbtn" class="uploadButton">Download File</label>
-    <input id="psevdoFileValue" class="inputFileText form-control" type="text"/>
-    <input class="fileInput" type="file" size="1" required onchange="document.getElementById('psevdoFileValue').value = this.value" name="addImg"/>
+    <input  id="psevdoFileValue" class="inputFileText form-control" type="text"/>
+    <input name="modelFile" class="fileInput" id="fileUpload" type="file" size="1" required onchange="document.getElementById('psevdoFileValue').value = this.value" />
 </span>
-       <textarea class="form-control" rows="5" id="comment" placeholder="Here you can describe the model"></textarea>
+       <input name="description" type="text" class="form-control" id="comment" placeholder="Here you can describe the model">
         <button class="btn btn-lg btn-primary add" type="submit">Add</button>
       </form>
     </div>
