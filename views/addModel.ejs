@@ -5,20 +5,19 @@
     
     <title>AddModel</title>
 
-   <link rel="stylesheet" type="text/css" href="./addModel.css">
+   <link rel="stylesheet" type="text/css" href="index.css">
     
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       
       
-      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <!--Own JavaScript -->
       <script type="text/javascript"  src="../front_js/API.js"> </script>
       
   </head>
 
   <body>
-   
     <div class="container">
 
       <form class="form-addModel" ref='uploadForm' 
@@ -38,5 +37,22 @@
         <button class="btn btn-lg btn-primary add" type="submit">Add</button>
       </form>
     </div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("body").css("display", "none");
+
+    $("body").fadeIn(2000);
+
+	$("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(1000, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}
+});
+</script>
   </body>
 </html>

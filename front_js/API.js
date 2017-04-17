@@ -66,7 +66,7 @@ function callback(err, data) {
 function showModels(models){
     
    var model_li = $("#models_field");
-   
+   $(".TEMP").hide();
     
     var item =$(".TEMP").html();
     //console.log(item);

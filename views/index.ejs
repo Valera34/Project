@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     
  <head>
@@ -28,16 +28,16 @@
   <div class="container a1">
       
     <div class="fix">
-  <button type="button" class="btn btn-info navbar-btn b1">Строения</button>
-  <button type="button" class="btn btn-info navbar-btn b1">Оружие</button>
-       <button type="button" class="btn btn-info navbar-btn b1">Карты</button>
-       <button type="button" class="btn btn-info navbar-btn b1">Машини</button>
-       <button type="button" class="btn btn-info navbar-btn b1">...</button>
-       <button type="button" class="btn btn-info navbar-btn b1">...</button>
-       <button type="button" class="btn btn-info navbar-btn b1">...</button>
-          <button type="button" class="btn btn-info navbar-btn b1">...</button>
-       <button type="button" class="btn btn-info navbar-btn b1">...</button>
-       <button type="button" class="btn btn-info navbar-btn b1">...</button>
+  <button type="button" class="btn btn-primary navbar-btn b1">Строения</button>
+  <button type="button" class="btn btn-primary navbar-btn b1">Оружие</button>
+       <button type="button" class="btn btn-primary navbar-btn b1">Карты</button>
+       <button type="button" class="btn btn-primary navbar-btn b1">Машини</button>
+       <button type="button" class="btn btn-primary navbar-btn b1">...</button>
+       <button type="button" class="btn btn-primary navbar-btn b1">...</button>
+       <button type="button" class="btn btn-primary navbar-btn b1">...</button>
+          <button type="button" class="btn btn-primary navbar-btn b1">...</button>
+       <button type="button" class="btn btn-primary navbar-btn b1">...</button>
+       <button type="button" class="btn btn-primary navbar-btn b1">...</button>
       
 </div>
 </div>
@@ -45,10 +45,10 @@
       <div class="a2">
           
           
-    <div class="header">
+    <div class="header faceb">
 
 
-       <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
+       <a href="/auth/facebook" class="btn btn-primary btn-lg"><span class="fa fa-facebook"></span> Facebook</a>
        
      </div>
      
@@ -68,11 +68,9 @@
         <h3 class="model-name"></h3>
         <p>Comments:</p>
           <div class="model-descr"></div>
-        <p><button type="button" class="btn btn-primary fingerUp">
-  <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-</button>
-<button type="button" class="btn btn-primary fingerDown">
-  <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+        <p>
+<button type="button" class="btn btn-success fingerDown">
+  <span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span>
 </button>
 </p>
       </div>
@@ -111,6 +109,23 @@
 </nav>
           </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("body").css("display", "none");
+
+    $("body").fadeIn(2000);
+
+	$("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(1000, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}
+});
+</script>
  </body>
     
     

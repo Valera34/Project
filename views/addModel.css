@@ -1,9 +1,13 @@
+body{
+background:white url(fon.jpg);
+}
 .body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color:lightgrey;
 }
 .container{
+  background:white url(fon2.jpg);
   background-color:#F5F5F5;
   margin-top:5%;
   box-shadow: 0 0 6px 0 ;
