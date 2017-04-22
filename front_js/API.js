@@ -8,7 +8,7 @@ var API_URL = "https://make-me-be-3d-master.appspot.com/";
 
 function backendGet(url, callback) {
     $.ajax({
-        url: '/get-model-list/',
+        url: url,
         type: 'GET',
         success: function(data){
             callback(null, data);
@@ -21,7 +21,7 @@ function backendGet(url, callback) {
 
 function backendPost(url, data, callback) {
     $.ajax({
-        url: API_URL+url,
+        url: "/download",
         type: 'POST',
         contentType : 'application/json',
         data: JSON.stringify(data),
@@ -40,6 +40,10 @@ function getModelList(callback) {
     backendGet("/get-model-list/", callback);
 };
 
+function getModel(data) {
+    backendGet("/download",data);
+};
+
 
 
 function initialise(){
@@ -54,13 +58,14 @@ function callback(err, data) {
     else {
         var models =[];
         models = data;
-        console.log(models);
+        //console.log(models);
         showModels(models);
     }
 }
     
     
 }
+
 
 
 function showModels(models){
@@ -71,7 +76,7 @@ function showModels(models){
     var item =$(".TEMP").html();
     //console.log(item);
     for(var i=0;i<models.length;i++){
-            console.log(models[i]);
+            //console.log(models[i]);
         
            showModel(models[i],item); 
         }
@@ -85,9 +90,16 @@ function showModels(models){
             
             node.find(".model-name").text(model.name);
             node.find(".model-descr").text(model.description);
-
+            
+            //node.add();
+            
+            var sel= node.find('.modeldown');
+            
+            $(sel).attr('href', "/app/uploads/"+model.file_id+".fbx");
+            
+            console.log(node); 
             model_li.append(node);
-            console.log("appended");   
+              
         }
     }
     
