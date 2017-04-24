@@ -84,3 +84,30 @@ background:white url(fon.jpg);
 .faceb{
 padding:8px;
 }
+.tooltips {
+    position: relative;
+    display: inline-block;
+    margin-bottom:3px;
+cursor: pointer
+}
+
+.tooltips .tooltiptext {
+    visibility: hidden;
+    width:300px;
+    background-color: gray;
+    color: white;
+    
+    border-radius: 6px;
+    padding: 5px 0;
+    
+      position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left:-70%;
+    margin-left: -60px;
+    opacity:0.9;
+}
+
+.tooltips:hover .tooltiptext {
+    visibility: visible;
+}
