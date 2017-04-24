@@ -69,6 +69,7 @@ background:white url(fon.jpg);
 }
 .row{
     text-align:center;
+clear:both;
 }
 .row-flex {
     display: flex;
@@ -110,4 +111,7 @@ cursor: pointer
 
 .tooltips:hover .tooltiptext {
     visibility: visible;
+}
+.fixing{
+ height:200px;
 }
